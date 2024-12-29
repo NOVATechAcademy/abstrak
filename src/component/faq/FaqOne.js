@@ -13,9 +13,8 @@ const FaqOne = () => {
                 <div className="row">
                     <div className="col-lg-5 col-xl-4">
                         <SectionTitle 
-                            subtitle="Pricing Plan"
                             title="Frequently asked questions"
-                            description="Aenean hendrerit laoreet vehicula. Nullam convallis augue at enim gravida pellentesque."
+                            description="Find answers to the most common questions about NOVA Tech Academy, including our programs, admissions process, and more."
                             textAlignment="heading-left"
                             textColor=""
                         />

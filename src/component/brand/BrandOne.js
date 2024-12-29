@@ -8,9 +8,9 @@ const BrandOne = () => {
         <div className="section section-padding-2 bg-color-dark">
         <div className="container">
             <SectionTitle 
-                subtitle="Top Clients"
-                title="We’ve built solutions for..."
-                description="Design anything from simple icons to fully featured websites and applications."
+                subtitle="Our Partners"
+                title="Our Top Partners are"
+                // description="Design anything from simple icons to fully featured websites and applications."
                 textAlignment="heading-light-left"
                 textColor=""
             />

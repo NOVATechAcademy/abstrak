@@ -1,14 +1,14 @@
 [
     {
         "id": 1,
-        "title": "Follow your own design process, whatever gets you to the outcome.",
+        "title": "Explore a Career in Software Development",
         "post_date": "Apr 16, 2022",
         "read_time": "9 min to read",
-        "thumb": "images/blog/thumb_5.png",
+        "thumb": "images/blog/img1.jpg",
         "large_thumb": "images/blog/large_thumb_5.png",
         "category": "Information technology",
         "format": "standard",
-        "excerpt": "Want to know the one thing that every successful digital marketer does first to ensure they get the biggest return on their marketing budget?",
+        "excerpt": "Discover why a career in software development is a smart choice, with high demand and lucrative salaries. ",
         "body": [
             "<p>Donec metus lorem, vulputate at sapien sit amet, auctor iaculis lorem. In vel hendrerit nisi. Vestibulum eget risus velit. Aliquam tristique libero at dui sodales, et placerat orci lobortis. Maecenas ipsum neque, elementum id dignissim et, imperdiet vitae mauris.</p>", 
             "<p>Habitasse per feugiat aliquam luctus accumsan curae, suspendisse aliquam taciti eros neque, aenean sit iaculis risus commodo ut sociosqu rhoncus potenti tristique placerat sit tempus, duis erat feugiat cras sociosqu porta ut praesent, fermentum donec convallis tellus vulputate duis nibh rhoncus phasellus dui massa nisl.</p>", 
@@ -40,14 +40,14 @@
     },
     {
         "id": 2,
-        "title": "How To Use a Remarketing Strategy To Get More",
+        "title": "Benefits of Working in Tech Industry",
         "post_date": "Mar 10, 2022",
         "read_time": "9 min to read",
-        "thumb": "images/blog/thumb_1.png",
+        "thumb": "images/blog/img2.jpg",
         "large_thumb": ["images/blog/large_thumb_1.png", "images/blog/large_thumb_2.png", "images/blog/large_thumb_3.png"],
         "category": "Agency News",
         "format": "gallery",
-        "excerpt": "Want to know the one thing that every successful digital marketer does first to ensure they get the biggest return on their marketing budget?",
+        "excerpt": "Discover the numerous benefits of a career in software development, including high salaries, job security, and opportunities for growth.",
         "body": [
             "<p>Donec metus lorem, vulputate at sapien sit amet, auctor iaculis lorem. In vel hendrerit nisi. Vestibulum eget risus velit. Aliquam tristique libero at dui sodales, et placerat orci lobortis. Maecenas ipsum neque, elementum id dignissim et, imperdiet vitae mauris.</p>", 
             "<p>Habitasse per feugiat aliquam luctus accumsan curae, suspendisse aliquam taciti eros neque, aenean sit iaculis risus commodo ut sociosqu rhoncus potenti tristique placerat sit tempus, duis erat feugiat cras sociosqu porta ut praesent, fermentum donec convallis tellus vulputate duis nibh rhoncus phasellus dui massa nisl.</p>",

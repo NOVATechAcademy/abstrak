@@ -53,7 +53,7 @@ const FooterOne = ({parentClass}) => {
                                             <ul className="list-unstyled">
                                                 {getServiceData.slice(0, 6).map((data, index) => (
                                                     <li key={index}>
-                                                        <Link to={process.env.PUBLIC_URL + `/service-details/${slugify(data.title)}`}>{data.title}</Link>
+                                                        <Link to={process.env.PUBLIC_URL + `${slugify(data.title)}`}>{data.title}</Link>
                                                     </li>
                                                 ))}
                                             </ul>
@@ -78,7 +78,7 @@ const FooterOne = ({parentClass}) => {
                                         <div className="footer-menu-link">
                                             <ul className="list-unstyled">
                                                 <li><Link to={process.env.PUBLIC_URL + "/contact"}>Contact</Link></li>
-                                                <li> <Link to={process.env.PUBLIC_URL + "/privacy-policy"}>Privacy Policy</Link></li>
+                                                {/* <li> <Link to={process.env.PUBLIC_URL + "/privacy-policy"}>Privacy Policy</Link></li> */}
                                                 <li><Link to={process.env.PUBLIC_URL + "/terms-use"}>Terms of Use</Link></li>
                                             </ul>
                                         </div>
@@ -92,7 +92,7 @@ const FooterOne = ({parentClass}) => {
                     <div className="row">
                         <div className="col-md-6">
                             <div className="footer-copyright">
-                                <span className="copyright-text">© {new Date().getFullYear()}. All rights reserved by <a href="https://axilthemes.com/">Axilthemes</a>.</span>
+                                <span className="copyright-text">© {new Date().getFullYear()}. All rights reserved by <a href="https://axilthemes.com/">NOVA Leading Tech Solution LLC</a>.</span>
                             </div>
                         </div>
                         <div className="col-md-6">

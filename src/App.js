@@ -50,6 +50,8 @@ import TermsOfUse from './pages/TermsOfUse';
 
 // Css Import
 import './assets/scss/app.scss';
+import FAQ from './component/faq/FAQ';
+import FaqOne from './component/faq/FaqOne';
 
 
 const App = () => {
@@ -57,19 +59,19 @@ const App = () => {
     <Router>
 		<ScrollToTop>
 			<Routes>
-				<Route path={process.env.PUBLIC_URL + "/"} element={<Splash />}/>
+				{/* <Route path={process.env.PUBLIC_URL + "/"} element={<Splash />}/> */}
 
 				<Route path={process.env.PUBLIC_URL + "/digital-agency"} element={<DigitalAgency />}/>
-				<Route path={process.env.PUBLIC_URL + "/creative-agency"} element={<CreativeAgency />}/>
-				<Route path={process.env.PUBLIC_URL + "/personal-portfolio"} element={<PersonalPortfolio />}/>
-				<Route path={process.env.PUBLIC_URL + "/home-startup"} element={<HomeStartup />}/>
-				<Route path={process.env.PUBLIC_URL + "/corporate-agency"} element={<CorporateAgency />}/>
+				{/* <Route path={process.env.PUBLIC_URL + "/creative-agency"} element={<CreativeAgency />}/> */}
+				{/* <Route path={process.env.PUBLIC_URL + "/personal-portfolio"} element={<PersonalPortfolio />}/> */}
+				{/* <Route path={process.env.PUBLIC_URL + "/home-startup"} element={<HomeStartup />}/> */}
+				<Route path={process.env.PUBLIC_URL + "/"} element={<CorporateAgency />}/>
 
 				{/* Blogs */}
-				<Route path={process.env.PUBLIC_URL + "/blog-grid/"} element={<BlogGridView />}/>
+				{/* <Route path={process.env.PUBLIC_URL + "/blog-grid/"} element={<BlogGridView />}/>
 				<Route path={process.env.PUBLIC_URL + "/category/:slug"} element={<BlogCategory />}/>
 				<Route path={process.env.PUBLIC_URL + "/archive/:slug"} element={<BlogArchive />}/>
-				<Route path={process.env.PUBLIC_URL + "/blog-details/:id"} element={<BlogDetails />}/>
+				<Route path={process.env.PUBLIC_URL + "/blog-details/:id"} element={<BlogDetails />}/> */}
 
 				{/* Service */}
 				<Route path={process.env.PUBLIC_URL + "/service-one/"} element={<ServiceOne />}/>
@@ -77,15 +79,16 @@ const App = () => {
 				<Route path={process.env.PUBLIC_URL + "/service-details/:slug"} element={<ServiceDetails />}/>
 
 				{/* Project  */}
-				<Route path={process.env.PUBLIC_URL + "/project-grid-one"} element={<ProjectGridOne />}/>
+				{/* <Route path={process.env.PUBLIC_URL + "/project-grid-one"} element={<ProjectGridOne />}/>
 				<Route path={process.env.PUBLIC_URL + "/project-grid-two"} element={<ProjectGridTwo />}/>
 				<Route path={process.env.PUBLIC_URL + "/project-grid-three"} element={<ProjectGridThree />}/>
 				<Route path={process.env.PUBLIC_URL + "/project-width-one"} element={<ProjectGridFour />}/>
 				<Route path={process.env.PUBLIC_URL + "/project-width-two"} element={<ProjectGridFive />}/>
-				<Route path={process.env.PUBLIC_URL + "/project-details/:slug"} element={<ProjectDetails />}/>
+				<Route path={process.env.PUBLIC_URL + "/project-details/:slug"} element={<ProjectDetails />}/> */}
 
 				{/* Pages  */}
 				<Route path={process.env.PUBLIC_URL + "/about-us"} element={<AboutUs />}/>
+				<Route path={process.env.PUBLIC_URL + "/faq"} element={<FaqOne />}/>
 				<Route path={process.env.PUBLIC_URL + "/our-office"} element={<OurOffice />}/>
 				<Route path={process.env.PUBLIC_URL + "/our-clients"} element={<OurClients />}/>
 				<Route path={process.env.PUBLIC_URL + "/team"} element={<Team />}/>

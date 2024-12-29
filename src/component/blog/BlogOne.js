@@ -8,9 +8,9 @@ const BlogOne = () => {
         <div className="section section-padding-equal">
             <div className="container">
                 <SectionTitle 
-                    subtitle="What's Going On"
-                    title="Latest stories"
-                    description="News From Abstrak And Around The World Of Web Design And Complete Solution of Online Digital Marketing"
+                    subtitle="Why Choose Software Development"
+                    title="The Future of Technology"
+                    description="Discover the benefits of a career in software development, including high demand, lucrative salaries, and the opportunity to shape the future of technology."
                     textAlignment=""
                     textColor=""
                 />

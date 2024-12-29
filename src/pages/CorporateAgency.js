@@ -25,8 +25,7 @@ const CorporateAgency = () => {
         <div className="section section-padding">
             <div className="container">
             <SectionTitle 
-                subtitle="What We Can Do For You"
-                title="Services we can <br> help you with"
+                title="Your journey to innovation <br> and technology starts here!"
                 description=""
                 textAlignment="heading-left mb--20 mb_md--70"
                 textColor=""
@@ -42,8 +41,8 @@ const CorporateAgency = () => {
             </ul>
 
         </div>
-        <ProjectOne parentClass="bg-color-light" />
-        <TestimonialOne />
+        {/* <ProjectOne parentClass="bg-color-light" /> */}
+        {/* <TestimonialOne /> */}
         <BrandOne />
         <BlogOne />
         <CtaLayoutOne />

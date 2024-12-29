@@ -8,15 +8,8 @@ const Nav = () => {
         <nav className="mainmenu-nav">
             <ul className="mainmenu">
                 <li className="menu-item-has-children">
-                    <Link to="#">Digital Agency <FaAngleDown /> </Link>
-                    <ul className="axil-submenu">
-                        <li><Link to={process.env.PUBLIC_URL + "/digital-agency"}>Digital Agency</Link></li>
-                        <li><Link to={process.env.PUBLIC_URL + "/creative-agency"}>Creative Agency</Link></li>
-                        <li><Link to={process.env.PUBLIC_URL + "/personal-portfolio"}>Personal Portfolio</Link></li>
-                        <li><Link to={process.env.PUBLIC_URL + "/home-startup"}>Home Startup</Link></li>
-                        <li><Link to={process.env.PUBLIC_URL + "/corporate-agency"}>Corporate Agency</Link></li>
-                        <li><a href="https://new.axilthemes.com/demo/react/abstrak-rtl/">RTL Demo</a></li>
-                    </ul>
+                    <Link to="/">Home</Link>
+                    {/* <li><Link to={process.env.PUBLIC_URL + "/"}>Home</Link></li> */}
                 </li>
                 <li className="menu-item-has-children">
                     <Link to="#">Services <FaAngleDown /></Link>
