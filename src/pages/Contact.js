@@ -7,16 +7,17 @@ import BreadCrumbOne from '../elements/breadcrumb/BreadCrumbOne';
 import FormTwo from '../component/contact/FormTwo';
 import SectionTitle from '../elements/section-title/SectionTitle';
 import ContactLocation from '../component/contact/ContactLocation';
+import HeaderFour from '../common/header/HeaderFour';
 
 
 
 const Contact = () => {
     return (
         <>
-            <SEO title="Blog Grid" />
+            <SEO title="Corporate Agency" />
             <ColorSwitcher />
             <main className="main-wrapper">
-                <HeaderOne />
+                <HeaderFour />
                 <BreadCrumbOne 
                 title="Contact"
                 page="Contact"
@@ -61,10 +62,7 @@ const Contact = () => {
                         description="2570 Eastbourne Dr, Woodbridge, VA 22191"
                         textAlignment="heading-light-left"
                         textColor=""
-                    />
-                    {/* <div className="row">
-                        <ContactLocation />
-                    </div> */}
+                    /> 
                 </div>
                 <ul className="shape-group-11 list-unstyled">
                     <li className="shape shape-1"><img src={process.env.PUBLIC_URL + "/images/others/line-6.png"} alt="line" /></li>

@@ -33,7 +33,7 @@ import ProjectDetails from './pages/ProjectDetails';
 // Pages 
 import Splash from './pages/Splash';
 import AboutUs from './pages/AboutUs';
-import OurOffice from './pages/OurOffice';
+import OurOffice from './pages/Apply';
 import OurClients from './pages/OurClients';
 import Team from './pages/Team';
 import TeamDetails from './pages/TeamDetails';
@@ -52,6 +52,7 @@ import TermsOfUse from './pages/TermsOfUse';
 import './assets/scss/app.scss';
 import FAQ from './component/faq/FAQ';
 import FaqOne from './component/faq/FaqOne';
+import Apply from './pages/Apply';
 
 
 const App = () => {
@@ -89,7 +90,7 @@ const App = () => {
 				{/* Pages  */}
 				<Route path={process.env.PUBLIC_URL + "/about-us"} element={<AboutUs />}/>
 				<Route path={process.env.PUBLIC_URL + "/faq"} element={<FaqOne />}/>
-				<Route path={process.env.PUBLIC_URL + "/our-office"} element={<OurOffice />}/>
+				<Route path={process.env.PUBLIC_URL + "/apply"} element={<Apply />}/>
 				<Route path={process.env.PUBLIC_URL + "/our-clients"} element={<OurClients />}/>
 				<Route path={process.env.PUBLIC_URL + "/team"} element={<Team />}/>
 				<Route path={process.env.PUBLIC_URL + "/team-details/:slug"} element={<TeamDetails />}/>

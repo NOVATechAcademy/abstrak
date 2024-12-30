@@ -48,15 +48,16 @@ const Nav = () => {
                     </ul>
                 </li>
                 <li className="menu-item-has-children">
-                    <Link to="#">Blog <FaAngleDown /></Link>
-                    <ul className="axil-submenu">
-                        <li><Link to={process.env.PUBLIC_URL + "/blog-grid"}>Blog</Link></li>
-                        <li><Link to={process.env.PUBLIC_URL + "/blog-details/1"}>Standard Post</Link></li>
-                        <li><Link to={process.env.PUBLIC_URL + "/blog-details/2"}>Gallery Post</Link></li>
-                        <li><Link to={process.env.PUBLIC_URL + "/blog-details/3"}>Video Post</Link></li>
+                    {/* <Link to="#">Apply <FaAngleDown /></Link> */}
+                    <Link to={process.env.PUBLIC_URL + "/faq"} >FAQ</Link>
+                    {/* <ul className="axil-submenu"> */}
+                        {/* <li><Link to={process.env.PUBLIC_URL + "/blog-grid"}>Blog</Link></li> */}
+                        {/* <li><Link to={process.env.PUBLIC_URL + "/blog-details/1"}>Standard Post</Link></li> */}
+                        {/* <li><Link to={process.env.PUBLIC_URL + "/blog-details/2"}>Gallery Post</Link></li> */}
+                        {/* <li><Link to={process.env.PUBLIC_URL + "/blog-details/3"}>Video Post</Link></li> */}
                         {/* <li><Link to={process.env.PUBLIC_URL + "#"}>Audio Post</Link></li>
                         <li><Link to={process.env.PUBLIC_URL + "#"}>Quote Post</Link></li> */}
-                    </ul>
+                    {/* </ul> */}
                 </li>
                 <li><Link to={process.env.PUBLIC_URL + "/contact"}>Contact</Link></li>
             </ul>

@@ -1,11 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
-
 const BreadCrumbOne = ({title, page}) => {
     return (
-        <div className="breadcrum-area">
+        <div className="breadcrum-area" style={{ backgroundColor: '#333', paddingTop: '220px' }}>
             <div className="container">
                 <div className="breadcrumb">
                     <ul className="list-unstyled">

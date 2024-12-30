@@ -45,7 +45,7 @@ const HeaderFour = () => {
                             <div className="header-action">
                                 <ul className="list-unstyled">
                                     <li className="header-btn">
-                                        <Link to={process.env.PUBLIC_URL + "/contact"} className="axil-btn btn-fill-white">Let's Talk</Link>
+                                        <Link to={process.env.PUBLIC_URL + "/apply"} className="axil-btn btn-fill-white">Apply</Link>
                                     </li>
                                     <li className="mobile-menu-btn sidemenu-btn d-lg-none d-block">
                                         <button className="btn-wrap" onClick={MobileMenuHandler}>

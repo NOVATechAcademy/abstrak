@@ -32,15 +32,15 @@ const FooterOne = ({parentClass}) => {
                         <div className="col-xl-6 col-lg-5">
                             <div className="footer-widget border-end">
                                 <div className="footer-newsletter">
-                                    {/* <h2 className="title">Get in touch!</h2> */}
-                                    {/* <p>Fusce varius, dolor tempor interdum tristique, dui urna bib endum magna, ut ullamcorper purus</p> */}
-                                    {/* <form>
+                                    <h2 className="title">Get in touch!</h2>
+                                    <p>Contact us for more information about our programs, admissions process, and how we can help you achieve your career goals in the tech industry.</p>
+                                    
                                         <div className="input-group">
-                                            <span className="mail-icon"><FaEnvelopeOpen /> </span>
-                                            <input type="email" className="form-control" placeholder="Email address" />
-                                            <button className="subscribe-btn" type="submit">Subscribe</button>
+                                            {/* <span className="mail-icon"><FaEnvelopeOpen /> </span> */}
+                                            {/* <input type="email" className="form-control" placeholder="Email address" /> */}
+                                            <Link to={process.env.PUBLIC_URL + "/contact"} className="subscribe-btn">Contact Us</Link>
                                         </div>
-                                    </form> */}
+    
                                 </div>
                             </div>
                         </div>
