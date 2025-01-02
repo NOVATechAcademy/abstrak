@@ -30,8 +30,6 @@ const Datas = [
 ]
 
 
-
-
 const AboutThree = () => {
     return (
         <div className="section section-padding bg-color-dark pb--80 pb_lg--40 pb_md--20">

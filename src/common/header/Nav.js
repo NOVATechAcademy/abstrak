@@ -9,57 +9,34 @@ const Nav = () => {
             <ul className="mainmenu">
                 <li className="menu-item-has-children">
                     <Link to="/">Home</Link>
-                    {/* <li><Link to={process.env.PUBLIC_URL + "/"}>Home</Link></li> */}
                 </li>
                 <li className="menu-item-has-children">
-                    <Link to="#">Services <FaAngleDown /></Link>
+                    <Link to="#">Our Courses <FaAngleDown /></Link>
                     <ul className="axil-submenu">
-                        <li><Link to={process.env.PUBLIC_URL + "/service-one"}>Service</Link></li>
-                        <li><Link to={process.env.PUBLIC_URL + "/service-two"}>Service Two</Link></li>
-                        <li><Link to={process.env.PUBLIC_URL + "/service-details/design"}>Service Details</Link></li>
+                        <li><Link to={process.env.PUBLIC_URL + "/programs"}>Upcoming Programs</Link></li>
+                        <li><Link to={process.env.PUBLIC_URL + "/faq"}>FAQs</Link></li>
                     </ul>
                 </li>
                 <li className="menu-item-has-children">
-                    <Link to="#">Portfolio <FaAngleDown /></Link>
+                    <Link to="#">About Us <FaAngleDown /></Link>
                     <ul className="axil-submenu">
-                        <li><Link to={process.env.PUBLIC_URL + "/project-grid-one"}>Two Column</Link></li>
-                        <li><Link to={process.env.PUBLIC_URL + "/project-grid-two"}>Three Column</Link></li>
-                        <li><Link to={process.env.PUBLIC_URL + "/project-grid-three"}>Four Column</Link></li>
-                        <li><Link to={process.env.PUBLIC_URL + "/project-width-one"}>Three Column Width</Link></li>
-                        <li><Link to={process.env.PUBLIC_URL + "/project-width-two"}>Four Column Width</Link></li>
-                        <li><Link to={process.env.PUBLIC_URL + "/project-details/plan-management"}>Portfolio Details</Link></li>
+                        <li><Link to={process.env.PUBLIC_URL + "/who-we-are"}>Who We Are</Link></li>
+                        <li><Link to={process.env.PUBLIC_URL + "/our-clients"}>Our Partners</Link></li>
+   
                     </ul>
                 </li>
                 <li className="menu-item-has-children">
-                    <Link to="#">Pages <FaAngleDown /></Link>
-                    <ul className="axil-submenu">
-                        <li><Link to={process.env.PUBLIC_URL + "/about-us"}>About Us</Link></li>
-                        <li><Link to={process.env.PUBLIC_URL + "/our-office"}>Our Office</Link></li>
-                        <li><Link to={process.env.PUBLIC_URL + "/case-study"}>Case Study</Link></li>
-                        <li><Link to={process.env.PUBLIC_URL + "/case-details/whitehorse"}>Case Study Details</Link></li>
-                        <li><Link to={process.env.PUBLIC_URL + "/team"}>Team</Link></li>
-                        <li><Link to={process.env.PUBLIC_URL + "/team-details/jane-cooper"}>Team Details</Link></li>
-                        <li><Link to={process.env.PUBLIC_URL + "/our-clients"}>Our Clients</Link></li>
-                        <li><Link to={process.env.PUBLIC_URL + "/testimonials"}>Testimonial</Link></li>
-                        <li><Link to={process.env.PUBLIC_URL + "/pricing-table"}>Pricing Table</Link></li>
-                        <li><Link to={process.env.PUBLIC_URL + "/typography"}>Typography</Link></li>
-                        <li><Link to={process.env.PUBLIC_URL + "/404"}>404 Page</Link></li>
-                        <li><Link to={process.env.PUBLIC_URL + "/coming-soon"}>Coming Soon</Link></li>
+                   <Link to="#">Contact Us <FaAngleDown /></Link>
+                     <ul className="axil-submenu">
+                     <li><Link to={process.env.PUBLIC_URL + "/contact"}>Rech Us</Link></li>
+                             <li>
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=2570+Eastbourne+Dr,+Woodbridge,+VA+22191" target="_blank" rel="noopener noreferrer">
+                                Get Directions
+                            </a>
+                        </li>
                     </ul>
                 </li>
-                <li className="menu-item-has-children">
-                    {/* <Link to="#">Apply <FaAngleDown /></Link> */}
-                    <Link to={process.env.PUBLIC_URL + "/faq"} >FAQ</Link>
-                    {/* <ul className="axil-submenu"> */}
-                        {/* <li><Link to={process.env.PUBLIC_URL + "/blog-grid"}>Blog</Link></li> */}
-                        {/* <li><Link to={process.env.PUBLIC_URL + "/blog-details/1"}>Standard Post</Link></li> */}
-                        {/* <li><Link to={process.env.PUBLIC_URL + "/blog-details/2"}>Gallery Post</Link></li> */}
-                        {/* <li><Link to={process.env.PUBLIC_URL + "/blog-details/3"}>Video Post</Link></li> */}
-                        {/* <li><Link to={process.env.PUBLIC_URL + "#"}>Audio Post</Link></li>
-                        <li><Link to={process.env.PUBLIC_URL + "#"}>Quote Post</Link></li> */}
-                    {/* </ul> */}
-                </li>
-                <li><Link to={process.env.PUBLIC_URL + "/contact"}>Contact</Link></li>
+                
             </ul>
         </nav>
     )

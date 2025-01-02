@@ -36,8 +36,6 @@ const FooterOne = ({parentClass}) => {
                                     <p>Contact us for more information about our programs, admissions process, and how we can help you achieve your career goals in the tech industry.</p>
                                     
                                         <div className="input-group">
-                                            {/* <span className="mail-icon"><FaEnvelopeOpen /> </span> */}
-                                            {/* <input type="email" className="form-control" placeholder="Email address" /> */}
                                             <Link to={process.env.PUBLIC_URL + "/contact"} className="subscribe-btn">Contact Us</Link>
                                         </div>
     
@@ -48,26 +46,22 @@ const FooterOne = ({parentClass}) => {
                             <div className="row">
                                 <div className="col-sm-6">
                                     <div className="footer-widget">
-                                        <h6 className="widget-title">Services</h6>
+                                        <h6 className="widget-title">Explore Our Courses</h6>
                                         <div className="footer-menu-link">
                                             <ul className="list-unstyled">
-                                                {getServiceData.slice(0, 6).map((data, index) => (
-                                                    <li key={index}>
-                                                        <Link to={process.env.PUBLIC_URL + `${slugify(data.title)}`}>{data.title}</Link>
-                                                    </li>
-                                                ))}
+                                                    <li> <Link to={"/programs"}>Upcoming Programs</Link> </li>
+                                                    <li> <Link to={"/faq"}>Frequently Asked Questions</Link> </li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-sm-3">
                                     <div className="footer-widget">
-                                        <h6 className="widget-title">Resourses</h6>
+                                        <h6 className="widget-title">About Us</h6>
                                         <div className="footer-menu-link">
                                             <ul className="list-unstyled">
-                                                <li><Link to={process.env.PUBLIC_URL + "/blog-grid"}>Blog</Link></li>
-                                                <li> <Link to={process.env.PUBLIC_URL + "/case-study"}>Case Studies</Link></li>
-                                                <li><Link to={process.env.PUBLIC_URL + "/project-grid-one"}>Portfolio</Link></li>
+                                                <li><Link to={process.env.PUBLIC_URL + "/who-we-are"}>Who We Are</Link></li>
+                                                <li> <Link to={process.env.PUBLIC_URL + "/our-clients"}>Our Partners</Link></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -78,8 +72,11 @@ const FooterOne = ({parentClass}) => {
                                         <div className="footer-menu-link">
                                             <ul className="list-unstyled">
                                                 <li><Link to={process.env.PUBLIC_URL + "/contact"}>Contact</Link></li>
-                                                {/* <li> <Link to={process.env.PUBLIC_URL + "/privacy-policy"}>Privacy Policy</Link></li> */}
-                                                <li><Link to={process.env.PUBLIC_URL + "/terms-use"}>Terms of Use</Link></li>
+                                                <li>
+                                                 <a href="https://www.google.com/maps/dir/?api=1&destination=2570+Eastbourne+Dr,+Woodbridge,+VA+22191" target="_blank" rel="noopener noreferrer">
+                                                         Get Directions
+                                                 </a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>

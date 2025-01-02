@@ -9,25 +9,30 @@ import ProcessOne from '../component/process/ProcessOne';
 import AboutThree from '../component/about/AboutThree';
 import AboutFour from '../component/about/AboutFour';
 import AboutFive from '../component/about/AboutFive';
+import HeaderFour from '../common/header/HeaderFour';
+import BreadCrumbOne from '../elements/breadcrumb/BreadCrumbOne';
 
 const AboutUs = () => {
     return (
         <>
-            <SEO title="About us" />
+            <SEO title="Corporate Agency" />
             <ColorSwitcher />
             <main className="main-wrapper">
-                <HeaderOne />
+                <HeaderFour />
+                <BreadCrumbOne
+                 title="Who We Are"
+                 page="Who We Are"
+                />
                 <BcrumbBannerOne 
                     title="One of the fastest growing Academy"
                     paragraph="Welcome to NOVA Tech Academy, your gateway to a brighter future in the tech industry.
                     </p>"
                     styleClass="thumbnail-4"
-                    mainThumb="/images/banner/banner-thumb-3.png"
+                    mainThumb="/images/banner/Growth.jpg"
                 />
                 <AboutFour />
                 <AboutThree />
                 <AboutFive />
-                {/* <ProcessOne /> */}
                 <CtaLayoutOne />
                 <FooterOne parentClass="" />
             </main>

@@ -2,12 +2,25 @@ import React from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import SectionTitle from '../../elements/section-title/SectionTitle';
 import FaqData from '../../data/faq/FaqData.json';
+import SEO from '../../common/SEO';
+import ColorSwitcher from '../../elements/switcher/ColorSwitcher';
+import HeaderFour from '../../common/header/HeaderFour';
+import BreadCrumbOne from '../../elements/breadcrumb/BreadCrumbOne';
 
 const allData = FaqData;
 
 
 const FaqOne = () => {
     return (
+        <>
+         <SEO title="Corporate Agency" />
+         <ColorSwitcher />
+         <main className="main-wrapper">
+            <HeaderFour />
+            <BreadCrumbOne
+            title="Frequently Asked Questions"
+            page="FAQ"
+            />
         <div className="section section-padding-equal bg-color-light faq-area">
             <div className="container">
                 <div className="row">
@@ -39,6 +52,8 @@ const FaqOne = () => {
                 <li className="shape shape-4"><img src={process.env.PUBLIC_URL + "/images/others/poses-lady.png"} alt="Poses" /></li>
             </ul>
         </div>
+        </main>
+        </>
     )
 }
 

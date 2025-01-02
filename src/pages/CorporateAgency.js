@@ -5,8 +5,6 @@ import FooterOne from '../common/footer/FooterOne';
 import BlogOne from '../component/blog/BlogOne';
 import BrandOne from '../component/brand/BrandOne';
 import CtaLayoutOne from '../component/cta/CtaLayoutOne';
-import TestimonialOne from '../component/testimonial/TestimonialOne';
-import ProjectOne from '../component/project/ProjectOne';
 import ServicePropOne from '../component/service/ServicePropOne';
 import SectionTitle from '../elements/section-title/SectionTitle';
 import BannerFive from '../component/banner/BannerFive';
@@ -41,8 +39,6 @@ const CorporateAgency = () => {
             </ul>
 
         </div>
-        {/* <ProjectOne parentClass="bg-color-light" /> */}
-        {/* <TestimonialOne /> */}
         <BrandOne />
         <BlogOne />
         <CtaLayoutOne />
