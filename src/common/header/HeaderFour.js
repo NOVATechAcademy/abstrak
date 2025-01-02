@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import SwitcherHeader from '../../elements/switcher/SwitcherHeader';
 import MobileMenu from './MobileMenu';
 
-
 const HeaderFour = () => {
 
     const sticky = StickyHeader(100);
@@ -20,7 +19,10 @@ const HeaderFour = () => {
         for(var i in elements) {
             if(elements.hasOwnProperty(i)) {
                 elements[i].onclick = function() {
-                    this.parentElement.querySelector('.axil-submenu').classList.toggle("active");
+                    const submenu = this.parentElement.querySelector('.axil-submenu');
+                    if (submenu) {
+                        submenu.classList.toggle("active");
+                    }
                     this.classList.toggle("open");
                 }
             }
@@ -39,12 +41,12 @@ const HeaderFour = () => {
                                 simage="/images/NovaLogo.svg"
                                 />
                             </div>
-                            <div className="header-main-nav">
+                            <div className="header-main-nav d-none d-lg-block">
                                 <Nav />
                             </div>
                             <div className="header-action">
                                 <ul className="list-unstyled">
-                                    <li className="header-btn">
+                                    <li className="header-btn d-none d-lg-block">
                                         <Link to={process.env.PUBLIC_URL + "/apply"} className="axil-btn btn-fill-white">Apply</Link>
                                     </li>
                                     <li className="mobile-menu-btn sidemenu-btn d-lg-none d-block">
