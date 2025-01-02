@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import jsPDF from 'jspdf';
 import * as XLSX from 'xlsx';
 import emailjs from '@emailjs/browser';
 import Alert from 'react-bootstrap/Alert';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 import SEO from '../common/SEO';
 import ColorSwitcher from '../elements/switcher/ColorSwitcher';
 import HeaderOne from '../common/header/HeaderOne';
@@ -36,6 +39,8 @@ const Apply = () => {
   });
   const [errors, setErrors] = useState({});
   const [result, showResult] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -168,251 +173,267 @@ const Apply = () => {
       );
 
       showResult(true);
+      setShowModal(true);
     } catch (error) {
       console.error('Failed to send emails:', error);
       setErrors({ form: 'There was an error submitting your application.' });
     }
   };
 
-  setTimeout(() => {
+  const handleCloseModal = () => {
+    setShowModal(false);
     showResult(false);
-  }, 5000);
+    navigate('/');
+  };
 
   return (
     <>
-     <SEO title="Corporate Agency" />
- <ColorSwitcher />
- <main className="main-wrapper">
-     <HeaderFour/>
-     <BreadCrumbOne 
-     title="Apply to NOVA Tech Academy"
-     page="Apply"
-     />
-    <div className="apply-page">
-      <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-lg-8">
-            {result ? <Result /> : null}
-            <form onSubmit={handleSubmit} className="apply-form">
-              {step === 1 && (
-                <div>
-                  <h2 className="form-subtitle">About You</h2>
-                  <div className="form-group">
-                    <label htmlFor="firstName">First Name</label>
-                    <input
-                      type="text"
-                      id="firstName"
-                      name="firstName"
-                      value={formData.firstName}
-                      onChange={handleChange}
-                      className="form-control"
-                    />
-                    {errors.firstName && <p className="form-error">{errors.firstName}</p>}
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="lastName">Last Name</label>
-                    <input
-                      type="text"
-                      id="lastName"
-                      name="lastName"
-                      value={formData.lastName}
-                      onChange={handleChange}
-                      className="form-control"
-                    />
-                    {errors.lastName && <p className="form-error">{errors.lastName}</p>}
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="middleName">Middle Name</label>
-                    <input
-                      type="text"
-                      id="middleName"
-                      name="middleName"
-                      value={formData.middleName}
-                      onChange={handleChange}
-                      className="form-control"
-                    />
-                    {errors.middleName && <p className="form-error">{errors.middleName}</p>}
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="dateOfBirth">Date of Birth</label>
-                    <input
-                      type="date"
-                      id="dateOfBirth"
-                      name="dateOfBirth"
-                      value={formData.dateOfBirth}
-                      onChange={handleChange}
-                      className="form-control"
-                    />
-                    {errors.dateOfBirth && <p className="form-error">{errors.dateOfBirth}</p>}
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="gender">Gender</label>
-                    <select
-                      id="gender"
-                      name="gender"
-                      value={formData.gender}
-                      onChange={handleChange}
-                      className="form-control"
-                    >
-                      <option value="">Select Gender</option>
-                      <option value="male">Male</option>
-                      <option value="female">Female</option>
-                      <option value="other">Other</option>
-                    </select>
-                    {errors.gender && <p className="form-error">{errors.gender}</p>}
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="isUSCitizen">Are you a US Citizen?</label>
-                    <select
-                      id="isUSCitizen"
-                      name="isUSCitizen"
-                      value={formData.isUSCitizen}
-                      onChange={handleChange}
-                      className="form-control"
-                    >
-                      <option value="">Select</option>
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
-                    </select>
-                    {errors.isUSCitizen && <p className="form-error">{errors.isUSCitizen}</p>}
-                  </div>
-                  {formData.isUSCitizen === 'no' && (
-                    <div className="form-group">
-                      <label htmlFor="authorizedToWork">Authorized to Work in the US?</label>
-                      <select
-                        id="authorizedToWork"
-                        name="authorizedToWork"
-                        value={formData.authorizedToWork}
-                        onChange={handleChange}
-                        className="form-control"
-                      >
-                        <option value="">Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                      </select>
-                      {errors.authorizedToWork && <p className="form-error">{errors.authorizedToWork}</p>}
+      <SEO title="Corporate Agency" />
+      <ColorSwitcher />
+      <main className="main-wrapper">
+        <HeaderFour />
+        <BreadCrumbOne 
+          title="Apply to NOVA Tech Academy"
+          page="Apply"
+        />
+        <div className="apply-page">
+          <div className="container">
+            <div className="row justify-content-center">
+              <div className="col-lg-8">
+                <form onSubmit={handleSubmit} className="apply-form">
+                  {step === 1 && (
+                    <div>
+                      <h2 className="form-subtitle">About You</h2>
+                      <div className="form-group">
+                        <label htmlFor="firstName">First Name</label>
+                        <input
+                          type="text"
+                          id="firstName"
+                          name="firstName"
+                          value={formData.firstName}
+                          onChange={handleChange}
+                          className="form-control"
+                        />
+                        {errors.firstName && <p className="form-error text-danger">{errors.firstName}</p>}
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="lastName">Last Name</label>
+                        <input
+                          type="text"
+                          id="lastName"
+                          name="lastName"
+                          value={formData.lastName}
+                          onChange={handleChange}
+                          className="form-control"
+                        />
+                        {errors.lastName && <p className="form-error text-danger">{errors.lastName}</p>}
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="middleName">Middle Name</label>
+                        <input
+                          type="text"
+                          id="middleName"
+                          name="middleName"
+                          value={formData.middleName}
+                          onChange={handleChange}
+                          className="form-control"
+                        />
+                        {errors.middleName && <p className="form-error text-danger">{errors.middleName}</p>}
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="dateOfBirth">Date of Birth</label>
+                        <input
+                          type="date"
+                          id="dateOfBirth"
+                          name="dateOfBirth"
+                          value={formData.dateOfBirth}
+                          onChange={handleChange}
+                          className="form-control"
+                        />
+                        {errors.dateOfBirth && <p className="form-error text-danger">{errors.dateOfBirth}</p>}
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="gender">Gender</label>
+                        <select
+                          id="gender"
+                          name="gender"
+                          value={formData.gender}
+                          onChange={handleChange}
+                          className="form-control"
+                        >
+                          <option value="">Select Gender</option>
+                          <option value="male">Male</option>
+                          <option value="female">Female</option>
+                          <option value="other">Other</option>
+                        </select>
+                        {errors.gender && <p className="form-error text-danger">{errors.gender}</p>}
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="isUSCitizen">Are you a US Citizen?</label>
+                        <select
+                          id="isUSCitizen"
+                          name="isUSCitizen"
+                          value={formData.isUSCitizen}
+                          onChange={handleChange}
+                          className="form-control"
+                        >
+                          <option value="">Select</option>
+                          <option value="yes">Yes</option>
+                          <option value="no">No</option>
+                        </select>
+                        {errors.isUSCitizen && <p className="form-error text-danger">{errors.isUSCitizen}</p>}
+                      </div>
+                      {formData.isUSCitizen === 'no' && (
+                        <div className="form-group">
+                          <label htmlFor="authorizedToWork">Authorized to Work in the US?</label>
+                          <select
+                            id="authorizedToWork"
+                            name="authorizedToWork"
+                            value={formData.authorizedToWork}
+                            onChange={handleChange}
+                            className="form-control"
+                          >
+                            <option value="">Select</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                          </select>
+                          {errors.authorizedToWork && <p className="form-error text-danger">{errors.authorizedToWork}</p>}
+                        </div>
+                      )}
+                      <div className="form-buttons">
+                        <button type="button" onClick={nextStep} className="btn btn-primary">Next</button>
+                      </div>
                     </div>
                   )}
-                  <div className="form-buttons">
-                    <button type="button" onClick={nextStep} className="btn btn-primary">Next</button>
-                  </div>
-                </div>
-              )}
 
-              {step === 2 && (
-                <div>
-                  <h2 className="form-subtitle">Program Options</h2>
-                  <div className="form-group">
-                    <label htmlFor="paymentPlan">Payment Plan</label>
-                    <select
-                      id="paymentPlan"
-                      name="paymentPlan"
-                      value={formData.paymentPlan}
-                      onChange={handleChange}
-                      className="form-control"
-                    >
-                      <option value="">Select Payment Plan</option>
-                      <option value="monthly">Monthly</option>
-                      <option value="installments">Installments</option>
-                    </select>
-                    {errors.paymentPlan && <p className="form-error">{errors.paymentPlan}</p>}
-                  </div>
-                  <div className="form-buttons">
-                    <button type="button" onClick={previousStep} className="btn btn-secondary">Previous</button>
-                    <button type="button" onClick={nextStep} className="btn btn-primary">Next</button>
-                  </div>
-                </div>
-              )}
+                  {step === 2 && (
+                    <div>
+                      <h2 className="form-subtitle">Program Options</h2>
+                      <div className="form-group">
+                        <label htmlFor="paymentPlan">Payment Plan</label>
+                        <select
+                          id="paymentPlan"
+                          name="paymentPlan"
+                          value={formData.paymentPlan}
+                          onChange={handleChange}
+                          className="form-control"
+                        >
+                          <option value="">Select Payment Plan</option>
+                          <option value="monthly">Monthly</option>
+                          <option value="installments">Installments</option>
+                        </select>
+                        {errors.paymentPlan && <p className="form-error text-danger">{errors.paymentPlan}</p>}
+                      </div>
+                      <div className="form-buttons d-flex justify-content-between">
+                        <button type="button" onClick={previousStep} className="btn btn-secondary">Previous</button>
+                        <button type="button" onClick={nextStep} className="btn btn-primary">Next</button>
+                      </div>
+                    </div>
+                  )}
 
-              {step === 3 && (
-                <div>
-                  <h2 className="form-subtitle">Background</h2>
-                  <div className="form-group">
-                    <label htmlFor="educationLevel">Education Level</label>
-                    <select
-                      id="educationLevel"
-                      name="educationLevel"
-                      value={formData.educationLevel}
-                      onChange={handleChange}
-                      className="form-control"
-                    >
-                      <option value="">Select Education Level</option>
-                      <option value="highschool">High School</option>
-                      <option value="bachelor">Bachelor's</option>
-                      <option value="master">Master's</option>
-                      <option value="phd">PhD</option>
-                    </select>
-                    {errors.educationLevel && <p className="form-error">{errors.educationLevel}</p>}
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="codingExperience">Coding Experience</label>
-                    <select
-                      id="codingExperience"
-                      name="codingExperience"
-                      value={formData.codingExperience}
-                      onChange={handleChange}
-                      className="form-control"
-                    >
-                      <option value="">Select Coding Experience</option>
-                      <option value="none">None</option>
-                      <option value="beginner">Beginner</option>
-                      <option value="intermediate">Intermediate</option>
-                      <option value="advanced">Advanced</option>
-                    </select>
-                    {errors.codingExperience && <p className="form-error">{errors.codingExperience}</p>}
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="email">Email</label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="form-control"
-                    />
-                    {errors.email && <p className="form-error">{errors.email}</p>}
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="phone">Phone</label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="form-control"
-                    />
-                    {errors.phone && <p className="form-error">{errors.phone}</p>}
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="employmentStatus">Employment Status</label>
-                    <select
-                      id="employmentStatus"
-                      name="employmentStatus"
-                      value={formData.employmentStatus}
-                      onChange={handleChange}
-                      className="form-control"
-                    >
-                      <option value="">Select Employment Status</option>
-                      <option value="employed">Employed</option>
-                      <option value="unemployed">Unemployed</option>
-                      <option value="student">Student</option>
-                    </select>
-                    {errors.employmentStatus && <p className="form-error">{errors.employmentStatus}</p>}
-                  </div>
-                  <div className="form-buttons">
-                    <button type="button" onClick={previousStep} className="btn btn-secondary">Previous</button>
-                    <button type="submit" className="btn btn-primary">Submit Application</button>
-                  </div>
-                </div>
-              )}
-            </form>
+                  {step === 3 && (
+                    <div>
+                      <h2 className="form-subtitle">Background</h2>
+                      <div className="form-group">
+                        <label htmlFor="educationLevel">Education Level</label>
+                        <select
+                          id="educationLevel"
+                          name="educationLevel"
+                          value={formData.educationLevel}
+                          onChange={handleChange}
+                          className="form-control"
+                        >
+                          <option value="">Select Education Level</option>
+                          <option value="highschool">High School</option>
+                          <option value="bachelor">Bachelor's</option>
+                          <option value="master">Master's</option>
+                          <option value="phd">PhD</option>
+                        </select>
+                        {errors.educationLevel && <p className="form-error text-danger">{errors.educationLevel}</p>}
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="codingExperience">Coding Experience</label>
+                        <select
+                          id="codingExperience"
+                          name="codingExperience"
+                          value={formData.codingExperience}
+                          onChange={handleChange}
+                          className="form-control"
+                        >
+                          <option value="">Select Coding Experience</option>
+                          <option value="none">None</option>
+                          <option value="beginner">Beginner</option>
+                          <option value="intermediate">Intermediate</option>
+                          <option value="advanced">Advanced</option>
+                        </select>
+                        {errors.codingExperience && <p className="form-error text-danger">{errors.codingExperience}</p>}
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="email">Email</label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          className="form-control"
+                        />
+                        {errors.email && <p className="form-error text-danger">{errors.email}</p>}
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="phone">Phone</label>
+                        <input
+                          type="tel"
+                          id="phone"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          className="form-control"
+                        />
+                        {errors.phone && <p className="form-error text-danger">{errors.phone}</p>}
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="employmentStatus">Employment Status</label>
+                        <select
+                          id="employmentStatus"
+                          name="employmentStatus"
+                          value={formData.employmentStatus}
+                          onChange={handleChange}
+                          className="form-control"
+                        >
+                          <option value="">Select Employment Status</option>
+                          <option value="employed">Employed</option>
+                          <option value="unemployed">Unemployed</option>
+                          <option value="student">Student</option>
+                        </select>
+                        {errors.employmentStatus && <p className="form-error text-danger">{errors.employmentStatus}</p>}
+                      </div>
+                      <div className="form-buttons d-flex justify-content-between">
+                        <button type="button" onClick={previousStep} className="btn btn-secondary">Previous</button>
+                        <button type="submit" className="btn btn-primary">Submit Application</button>
+                      </div>
+                    </div>
+                  )}
+                </form>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    </main>
+
+        <Modal show={showModal} onHide={handleCloseModal}>
+          <Modal.Header closeButton>
+            <Modal.Title>Application Submitted</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Result />
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="primary" onClick={handleCloseModal}>
+              Go To Home Page
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </main>
     </>
   );
 };
